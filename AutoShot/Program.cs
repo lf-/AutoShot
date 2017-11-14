@@ -16,7 +16,9 @@ namespace AutoShot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Console.WriteLine("Hello World");
+            var form = new MainScreen();
+            Application.Run(form);
         }
     }
 }
