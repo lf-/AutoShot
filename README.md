@@ -11,6 +11,7 @@ since it eliminates needing to crop images or make multiple keystrokes,
 click back and forth, etc.
 
 A picture (taken by AutoShot) is worth 1000 words:
+
 ![Main Screen](MainScreen.png)
 
 Press Start and it will start capturing all clicks and taking a
