@@ -8,6 +8,12 @@ namespace AutoShot
 {
     class Screenshot
     {
+        /// <summary>
+        /// Captures the cursor.
+        /// </summary>
+        /// <param name="x">X coordinate of cursor (relative to screen)</param>
+        /// <param name="y">Y coordinate of cursor (relative to screen)</param>
+        /// <returns>Bitmap of cursor</returns>
         private static Bitmap CaptureCursor(ref int x, ref int y)
         {
             Bitmap bmp;
@@ -30,6 +36,12 @@ namespace AutoShot
             return null;
         }
 
+        /// <summary>
+        /// Adds the cursor to a Graphics instance.
+        /// </summary>
+        /// <param name="hwnd">HWND of window the cursor is currently in</param>
+        /// <param name="g">The graphics instance to add the cursor to</param>
+        /// <param name="xCropOffset">Size of window border being cropped off in x direction</param>
         private static void AddCursor(IntPtr hwnd, Graphics g, int xCropOffset)
         {
             // screen coordinates
@@ -64,6 +76,10 @@ namespace AutoShot
             g.DrawImage(cursorBmp, cursorRect);
         }
 
+        /// <summary>
+        /// Capture a screenshot of the active window.
+        /// </summary>
+        /// <returns>Bitmap of the window captured</returns>
         public static Bitmap Capture()
         {
             var hwnd = Native.GetForegroundWindow();
@@ -86,6 +102,10 @@ namespace AutoShot
             return res;
         }
 
+        /// <summary>
+        /// Captures a screenshot to a file.
+        /// </summary>
+        /// <param name="filename">The filename to capture to.</param>
         public static void CaptureTo(string filename)
         {
             var bmp = Capture();

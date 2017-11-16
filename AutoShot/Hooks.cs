@@ -16,12 +16,18 @@ namespace AutoShot
             this.Log = x => { };
         }
 
+        /// <summary>
+        /// Subscribe to click events.
+        /// </summary>
         public void Subscribe()
         {
             this.GlobalHook = Hook.GlobalEvents();
             this.GlobalHook.MouseDownExt += this.GlobalHookMouseDownExt;
         }
 
+        /// <summary>
+        /// Unsubscribe from click events.
+        /// </summary>
         public void Unsubscribe()
         {
             if (this.GlobalHook != null) {
