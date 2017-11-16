@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Serilog;
 
 namespace AutoShot
 {
@@ -16,7 +17,9 @@ namespace AutoShot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Console.WriteLine("Hello World");
+            var log = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+            Log.Logger = log;
+            Log.Information("Starting AutoShot...");
             var form = new MainScreen();
             Application.Run(form);
         }
